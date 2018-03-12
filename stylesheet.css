@@ -1,0 +1,46 @@
+body {
+
+}
+
+#time-text {
+	font-size: 72px;
+}
+
+.clock-container {
+	display: flex;
+	justify-content: center;
+		
+}
+
+/*mobile scherm*/
+@media only screen and (max-width: 320px) {
+	
+	body {
+		background-color: pink;
+	}
+
+
+
+	/*#canvas {
+		background-color: #333;
+		justify-content: center;
+	}*/
+	
+}
+
+/*tablet*/
+@media only screen and (min-width: 321px) and (max-width: 720px) {
+	
+	body {
+		background-color: lightblue;
+	}
+}
+
+
+/*desktop*/
+@media only screen and (min-width: 721px) {
+
+	body {
+		background-color: #eee;
+	}
+}
