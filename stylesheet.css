@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
 body {
-
-}
-
-#time-text {
-	font-size: 72px;
+	background-image: url('img/morning.jpg');
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .clock-container {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 		
 }
 
@@ -19,12 +19,14 @@ body {
 		background-color: pink;
 	}
 
+	#time-text {
+		font-size: 72px;
+		text-align: center;
+	}
 
-
-	/*#canvas {
-		background-color: #333;
-		justify-content: center;
-	}*/
+	#date-text {
+		text-align: center;
+	}
 	
 }
 
@@ -34,6 +36,15 @@ body {
 	body {
 		background-color: lightblue;
 	}
+
+	#time-text {
+		font-size: 100px;
+		text-align: center;
+	}
+
+	#date-text {
+		text-align: center;
+	}
 }
 
 
@@ -42,5 +53,14 @@ body {
 
 	body {
 		background-color: #eee;
+	}
+
+	#time-text {
+		font-size: 180px;
+		text-align: center;
+	}
+
+	#date-text {
+		text-align: center;
 	}
 }

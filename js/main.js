@@ -1,5 +1,11 @@
 function updateTime() {
 	var currentTime = new Date();
+	var monthArray = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+	var dayArray = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
+	var month = monthArray[currentTime.getMonth()];
+	var day = dayArray[currentTime.getDay()];
+	var date = currentTime.getDate();
+	var year = currentTime.getFullYear();
 	var hours = currentTime.getHours();
 	var minutes = currentTime.getMinutes();
 	var seconds = currentTime.getSeconds();
@@ -7,6 +13,7 @@ function updateTime() {
 	seconds = checkTime(seconds);
 	document.getElementById('time-text').innerHTML =
     hours + ":" + minutes + ":" + seconds;
+    document.getElementById('date-text').innerHTML = day + " " + date +  " " + month +  " " + year;
     var time = setTimeout(updateTime,500);
 }
 
@@ -20,6 +27,10 @@ function checkTime(i) {
     };  
     return i;
 }
+
+
+
+// var tl = new TimeLineMax();
 
 //Functie wordt aangeroepen
 window.onload = function() {
