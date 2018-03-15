@@ -1,31 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 body {
-	background-image: url('img/morning.jpg');
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
-.clock-container {
+.container {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 		
 }
 
+/*#morning {
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}*/
+
+/*.morning {
+	position: absolute;
+	top: 20%;
+	width: 50%;
+	height: 50%;
+	background: url('img/morning.png') repeat;
+	opacity: 0;
+}
+
+.night {
+	width: 100%;
+	height:100%;
+	visibility: hidden;
+}*/
+
+.morning {
+	position: absolute;
+	top: 60%;
+	width: 100%;
+	height: 50%;
+	background: url('img/morning.png') repeat;
+	opacity: 0;
+}
+
+
+
 /*mobile scherm*/
 @media only screen and (max-width: 320px) {
 	
 	body {
-		background-color: pink;
+		background-repeat: no-repeat;
+		/*background-position: center center;*/
+		background-attachment: fixed;
+		overflow: hidden;
 	}
 
 	#time-text {
 		font-size: 72px;
 		text-align: center;
+		color: #000;
 	}
 
 	#date-text {
 		text-align: center;
+		font-size: 18px;
 	}
 	
 }
