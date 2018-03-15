@@ -34,13 +34,27 @@ body {
 
 .morning {
 	position: absolute;
-	top: 20%;
 	width: 100%;
 	height: 50%;
 	background: url('img/morning.png') repeat;
 	opacity: 0;
 }
 
+.sundown {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	background: url('img/cloud.png') repeat;
+	opacity: 0;
+}
+
+.moon {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	background: url('img/moon.png') repeat;
+	opacity: 0;
+}
 
 
 /*mobile scherm*/
@@ -48,7 +62,7 @@ body {
 	
 	body {
 		background-repeat: no-repeat;
-		/*background-position: center center;*/
+		background-position: center center;
 		background-attachment: fixed;
 		overflow: hidden;
 	}
@@ -62,6 +76,11 @@ body {
 	#date-text {
 		text-align: center;
 		font-size: 18px;
+	}
+
+	#hello-text {
+		text-align: center;
+		font-size: 48px;
 	}
 	
 }

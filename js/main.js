@@ -1,14 +1,16 @@
 	//var hours = currentTime.getHours(); //om de tijd in console te testen
+var currentTime;
+var hours;
 
 function updateTime() {
-	var currentTime = new Date();
+		currentTime = new Date();
 	var monthArray = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
 	var dayArray = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
 	var month = monthArray[currentTime.getMonth()];
 	var day = dayArray[currentTime.getDay()];
 	var date = currentTime.getDate();
 	var year = currentTime.getFullYear();
-	var hours = currentTime.getHours();
+		hours = currentTime.getHours();
 	var minutes = currentTime.getMinutes();
 	var seconds = currentTime.getSeconds();
 	minutes = checkTime(minutes);
@@ -20,24 +22,60 @@ function updateTime() {
     document.getElementById('date-text').innerHTML = day + " " + date +  " " + month +  " " + year;
     var time = setTimeout(updateTime,500);
 
-    if(hours >= 5 && hours <= 8) {
-    	document.body.background = "img/early-morning.jpg";
-    }
 
-    if(hours >= 9 && hours <= 17) {
+    if (hours >= 5 && hours <= 8) {
+
+    	document.getElementById("hello-text").innerHTML = "Goedemorgen";
+    	document.body.background = "img/early-morning.jpg";
+
+    } else if (hours >= 9 && hours <= 11) {
+
+    	document.getElementById("hello-text").innerHTML = "Goedemorgen";
     	document.body.background = "img/morning.jpg";
     	// document.getElementById("morning").style.visibility = "visible";
-    }
+    	document.getElementsByClassName("morning");
 
-    if(hours >= 18 && hours <= 20) {
+
+    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
+
+		// amimate timeline
+		timeline.to('.morning', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'morning');
+
+	} else if (hours >= 12 && hours <= 17) {
+		document.getElementById("hello-text").innerHTML = "Goedemiddag";
+    	document.body.background = "img/morning.jpg";
+    	// document.getElementById("morning").style.visibility = "visible";
+    	document.getElementsByClassName("morning");
+
+
+    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
+
+		// amimate timeline
+		timeline.to('.morning', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'morning');
+
+    } else if(hours >= 18 && hours <= 20) {
+
+    	document.getElementById("hello-text").innerHTML = "Goedenavond";
     	document.body.background = "img/early-morning.jpg";
     	document.getElementById("time-text").style.color = "#000";
     	// document.getElementById("morning").style.visibility = "visible";
-    }
 
-    if(hours >= 21 && hours <= 23 || hours >= 0 && hours <= 3) {
+    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
+
+		// amimate timeline
+		timeline.to('.sundown', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'sundown');
+
+    } else if(hours >= 21 && hours <= 23 || hours >= 0 && hours <= 4) {
+
+    	document.getElementById("hello-text").innerHTML = "Goedenacht";
     	document.body.background = "img/night.jpg";
-    	document.getElementById("night").style.visibility = "visible";
+    	document.getElementById("time-text").style.color = "#fff";
+    	document.getElementById("hello-text").style.color = "#fff";
+    	document.getElementById("date-text").style.color = "#fff";
+    	// document.getElementById("night").style.visibility = "visible";
     }
 }
 
@@ -53,10 +91,25 @@ function checkTime(i) {
     return i;
 }
 
+function checkVisual() {
 
-//Functie wordt aangeroepen
+	hours = currentTime.getHours();
+
+	if(hours >= 21 && hours <= 23 || hours >= 0 && hours <= 3) {
+
+    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
+
+		// amimate timeline
+		timeline.to('.moon', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'moon');
+    }
+}
+
+
+//Functies wordt aangeroepen
 window.onload = function() {
 	updateTime();
+	checkVisual();
 }
 
 
@@ -67,17 +120,17 @@ window.onload = function() {
 // 	repeat: -1
 // });
 
-TweenMax.to("#morning", 2, {
-	ease: Power0.easeNone,
-	x: 100,
-	repeat: -1
-});
+// TweenMax.to("#morning", 2, {
+// 	ease: Power0.easeNone,
+// 	x: 100,
+// 	repeat: -1
+// });
 
-TweenMax.to("#night", 2, {
-	ease: Power0.easeNone,
-	x: 100,
-	repeat: -1
-});
+// TweenMax.to("#night", 2, {
+// 	ease: Power0.easeNone,
+// 	x: 100,
+// 	repeat: -1
+// });
 
 
 
@@ -86,10 +139,6 @@ TweenMax.to("#night", 2, {
 //.from( target:Object, duration:Number, vars:Object, position:* ) : 
 
 // set timeline
-		var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
-
-		// amimate timeline
-		timeline.to('.morning', 1, { opacity: 1})
-				.from('.layer', 200, { backgroundPositionX: 2400}, 'morning');
+		
 
 
