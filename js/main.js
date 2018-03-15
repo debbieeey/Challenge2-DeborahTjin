@@ -2,6 +2,16 @@
 var currentTime;
 var hours;
 
+// init message
+var message = document.getElementById('date-text');
+
+// tween message
+TweenMax.to(message, 20, {
+	left: -960,
+	ease: Bounce.easeNone,
+	repeat: -1
+});
+
 function updateTime() {
 		currentTime = new Date();
 	var monthArray = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
@@ -32,28 +42,13 @@ function updateTime() {
 
     	document.getElementById("hello-text").innerHTML = "Goedemorgen";
     	document.body.background = "img/morning.jpg";
-    	// document.getElementById("morning").style.visibility = "visible";
-    	document.getElementsByClassName("morning");
-
-
-    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
-
-		// amimate timeline
-		timeline.to('.morning', 1, { opacity: 1})
-				.from('.layer', 200, { backgroundPositionX: 2400}, 'morning');
+    	// document.getElementsByClassName("morning");
 
 	} else if (hours >= 12 && hours <= 17) {
 		document.getElementById("hello-text").innerHTML = "Goedemiddag";
     	document.body.background = "img/morning.jpg";
     	// document.getElementById("morning").style.visibility = "visible";
-    	document.getElementsByClassName("morning");
-
-
-    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
-
-		// amimate timeline
-		timeline.to('.morning', 1, { opacity: 1})
-				.from('.layer', 200, { backgroundPositionX: 2400}, 'morning');
+    	// document.getElementsByClassName("morning");
 
     } else if(hours >= 18 && hours <= 20) {
 
@@ -61,12 +56,6 @@ function updateTime() {
     	document.body.background = "img/early-morning.jpg";
     	document.getElementById("time-text").style.color = "#000";
     	// document.getElementById("morning").style.visibility = "visible";
-
-    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
-
-		// amimate timeline
-		timeline.to('.sundown', 1, { opacity: 1})
-				.from('.layer', 200, { backgroundPositionX: 2400}, 'sundown');
 
     } else if(hours >= 21 && hours <= 23 || hours >= 0 && hours <= 4) {
 
@@ -94,12 +83,32 @@ function checkTime(i) {
 function checkVisual() {
 
 	hours = currentTime.getHours();
+	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
 
-	if(hours >= 21 && hours <= 23 || hours >= 0 && hours <= 3) {
+	//.to( target:Object, duration:Number, vars:Object, position:* ) : 
+	//.from( target:Object, duration:Number, vars:Object, position:* ) : 
+    if (hours >= 5 && hours <= 8) {
 
-    	var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
+		timeline.to('.cloud', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'cloud');
 
-		// amimate timeline
+    } else if (hours >= 9 && hours <= 11) {
+
+		timeline.to('.sun', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'sun');
+
+	} else if (hours >= 12 && hours <= 17) {
+
+		timeline.to('.sun', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'sun');
+
+    } else if(hours >= 18 && hours <= 20) {
+
+		timeline.to('.cloud', 1, { opacity: 1})
+				.from('.layer', 200, { backgroundPositionX: 2400}, 'cloud');
+
+    } else if(hours >= 21 && hours <= 23 || hours >= 0 && hours <= 4) {
+
 		timeline.to('.moon', 1, { opacity: 1})
 				.from('.layer', 200, { backgroundPositionX: 2400}, 'moon');
     }
@@ -111,34 +120,3 @@ window.onload = function() {
 	updateTime();
 	checkVisual();
 }
-
-
-//TweenMax.to(target, duration, {vars});
-// TweenMax.to("#time-text", 2, {
-// 	color:"#fff",
-// 	ease: Power0.easeNone,
-// 	repeat: -1
-// });
-
-// TweenMax.to("#morning", 2, {
-// 	ease: Power0.easeNone,
-// 	x: 100,
-// 	repeat: -1
-// });
-
-// TweenMax.to("#night", 2, {
-// 	ease: Power0.easeNone,
-// 	x: 100,
-// 	repeat: -1
-// });
-
-
-
-
-//.to( target:Object, duration:Number, vars:Object, position:* ) : 
-//.from( target:Object, duration:Number, vars:Object, position:* ) : 
-
-// set timeline
-		
-
-
