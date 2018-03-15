@@ -34,7 +34,7 @@ body {
 
 .morning {
 	position: absolute;
-	top: 60%;
+	top: 20%;
 	width: 100%;
 	height: 50%;
 	background: url('img/morning.png') repeat;
