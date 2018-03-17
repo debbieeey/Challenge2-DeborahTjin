@@ -42,6 +42,16 @@ body {
 
 /*mobile scherm*/
 @media only screen and (max-width: 320px) {
+<<<<<<< HEAD
+=======
+	
+	body {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+		overflow: hidden;
+	}
+>>>>>>> 892f302f204d75f1fd6cbe9ebcdfaa928dc45543
 
 	#time-text {
 		font-size: 60px;
@@ -51,6 +61,7 @@ body {
 
 	#date-text {
 		position: absolute;
+<<<<<<< HEAD
 		text-align: center;
 		font-size: 18px;
 		margin-top: 30%;
@@ -60,6 +71,17 @@ body {
 	#hello-text {
 		margin-top: 10%;
 		text-align: center;
+=======
+		text-align: center;
+		font-size: 18px;
+		margin-top: 30%;
+		right: -320px;
+	}
+
+	#hello-text {
+		margin-top: 10%;
+		text-align: center;
+>>>>>>> 892f302f204d75f1fd6cbe9ebcdfaa928dc45543
 		font-size: 48px;
 	}
 	
@@ -68,6 +90,16 @@ body {
 /*tablet*/
 @media only screen and (min-width: 321px) and (max-width: 720px) {
 	
+<<<<<<< HEAD
+=======
+	body {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+		overflow: hidden;
+	}
+
+>>>>>>> 892f302f204d75f1fd6cbe9ebcdfaa928dc45543
 	#time-text {
 		font-size: 100px;
 		text-align: center;
@@ -92,6 +124,16 @@ body {
 /*desktop*/
 @media only screen and (min-width: 721px) {
 
+<<<<<<< HEAD
+=======
+	body {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+		overflow: hidden;
+	}
+
+>>>>>>> 892f302f204d75f1fd6cbe9ebcdfaa928dc45543
 	#time-text {
 		font-size: 180px;
 		text-align: center;
@@ -99,6 +141,7 @@ body {
 
 	#date-text {
 		position: absolute;
+<<<<<<< HEAD
 		text-align: center;
 		font-size: 36px;
 		margin-top: 20%;
@@ -108,6 +151,17 @@ body {
 	#hello-text {
 		margin-top: 10%;
 		text-align: center;
+=======
+		text-align: center;
+		font-size: 36px;
+		margin-top: 20%;
+		right: -700px;
+	}
+
+	#hello-text {
+		margin-top: 10%;
+		text-align: center;
+>>>>>>> 892f302f204d75f1fd6cbe9ebcdfaa928dc45543
 		font-size: 72px;
 	}
 }
