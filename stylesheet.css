@@ -5,8 +5,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
-	background-size: cover;
-	/*overflow: hidden;*/
+	overflow: hidden;*/
 }
 
 .container {
