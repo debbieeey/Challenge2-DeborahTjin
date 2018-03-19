@@ -76,6 +76,7 @@ function updateTime() {
 
     	document.getElementById("hello-text").innerHTML = "Goedenacht";
     	document.body.background = "img/night.jpg";
+        document.getElementById("title").style.color = '#fff';
     	document.getElementById("time-text").style.color = "#fff";
     	document.getElementById("hello-text").style.color = "#fff";
     	document.getElementById("date-text").style.color = "#fff";

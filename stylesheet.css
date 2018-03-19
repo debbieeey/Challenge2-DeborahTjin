@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+@font-face {
+	font-family: Guardians;
+	src: url(fonts/Guardians.ttf);
+}
+
 body {
 	font-family: 'Roboto Condensed', sans-serif;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
 	overflow: hidden;*/
+}
+
+#title {
+	text-align: left;
+	font-size: 150%;
+	font-family: Guardians;
+	padding: 20px;
 }
 
 .container {
